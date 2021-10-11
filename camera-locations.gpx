@@ -1,219 +1,237 @@
 <?xml version="1.0"?>
 <gpx version="1.1" creator="GDAL 3.2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-<metadata><bounds minlat="5.735951456769024" minlon="-7.303127760098962" maxlat="5.787911215141033" maxlon="-7.273653493745884"/></metadata>                    
-<wpt lat="5.735951456769024" lon="-7.286878118230776">
+<metadata><bounds minlat="5.735873949060971" minlon="-7.303793585632047" maxlat="5.787833939983067" maxlon="-7.274018122749007"/></metadata>                    
+<wpt lat="5.735873949060971" lon="-7.282834477976002">
   <extensions>
     <ogr:transect>1</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.736427343731103" lon="-7.282168858374696">
+<wpt lat="5.742345633512923" lon="-7.292555316755517">
   <extensions>
     <ogr:transect>2</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.74289915274451" lon="-7.291889707317127">
+<wpt lat="5.742822126496768" lon="-7.287845797128754">
   <extensions>
     <ogr:transect>3</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.743375569853269" lon="-7.287180159980144">
+<wpt lat="5.743298095367752" lon="-7.283136234989027">
   <extensions>
     <ogr:transect>4</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.743851462848528" lon="-7.282470570136319">
+<wpt lat="5.743773540124524" lon="-7.278426630382394">
   <extensions>
     <ogr:transect>5</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.744326831729096" lon="-7.277760937831705">
+<wpt lat="5.749292314253641" lon="-7.297567583364789">
   <extensions>
     <ogr:transect>6</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.749845882179491" lon="-7.296901956398131">
+<wpt lat="5.7497693374026" lon="-7.292857776285478">
   <extensions>
     <ogr:transect>7</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.750322829453578" lon="-7.29219212159818">
+<wpt lat="5.750245836433818" lon="-7.288147926638182">
   <extensions>
     <ogr:transect>8</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.750799252609266" lon="-7.287482244236356">
+<wpt lat="5.750721811345906" lon="-7.283438034468961">
   <extensions>
     <ogr:transect>9</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.751275151645324" lon="-7.282772324358729">
+<wpt lat="5.751197262137763" lon="-7.278728099823881">
   <extensions>
     <ogr:transect>10</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.751750526560518" lon="-7.278062362011362">
+<wpt lat="5.751672188808103" lon="-7.274018122749007">
   <extensions>
     <ogr:transect>11</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.756791645139137" lon="-7.301914865547957">
+<wpt lat="5.75623802851075" lon="-7.302580510034253">
   <extensions>
     <ogr:transect>12</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.757269122597168" lon="-7.297204743302987">
+<wpt lat="5.756715581843512" lon="-7.297870415520358">
   <extensions>
     <ogr:transect>13</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.757746075931892" lon="-7.292494578441103">
+<wpt lat="5.757192611053537" lon="-7.293160278383427">
   <extensions>
     <ogr:transect>14</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.758222505142116" lon="-7.287784371008375">
+<wpt lat="5.757669116139676" lon="-7.288450098669535">
   <extensions>
     <ogr:transect>15</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.758698410226552" lon="-7.283074121050881">
+<wpt lat="5.758145097100542" lon="-7.283739876424753">
   <extensions>
     <ogr:transect>16</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.759173791183958" lon="-7.27836382861469">
+<wpt lat="5.758620553935021" lon="-7.279029611695155">
   <extensions>
     <ogr:transect>17</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.759648648013081" lon="-7.273653493745884">
+<wpt lat="5.759095486641809" lon="-7.274319304526822">
   <extensions>
     <ogr:transect>18</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.764214449348994" lon="-7.302218025168743">
+<wpt lat="5.763660859884505" lon="-7.302883714907559">
   <extensions>
     <ogr:transect>19</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.764691932881447" lon="-7.297507572824755">
+<wpt lat="5.764138419292094" lon="-7.298173290298958">
   <extensions>
     <ogr:transect>20</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.765168892284461" lon="-7.292797077854871">
+<wpt lat="5.764615454570777" lon="-7.293462823058337">
   <extensions>
     <ogr:transect>21</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.765645327556791" lon="-7.288086540305165">
+<wpt lat="5.765091965719429" lon="-7.288752313231778">
   <extensions>
     <ogr:transect>22</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.766121238697191" lon="-7.283375960221726">
+<wpt lat="5.765567952736688" lon="-7.284041760865361">
   <extensions>
     <ogr:transect>23</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.766596625704381" lon="-7.278665337650633">
+<wpt lat="5.766043415621346" lon="-7.279331166005171">
   <extensions>
     <ogr:transect>24</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.771636823522804" lon="-7.302521227461507">
+<wpt lat="5.771083261214231" lon="-7.30318696245896">
   <extensions>
     <ogr:transect>25</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.772114313137305" lon="-7.297810444972426">
+<wpt lat="5.771560826704266" lon="-7.298476207709577">
   <extensions>
     <ogr:transect>26</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.772591278616179" lon="-7.293099619848459">
+<wpt lat="5.772037868059271" lon="-7.293765410319188">
   <extensions>
     <ogr:transect>27</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.773067719958207" lon="-7.288388752135693">
+<wpt lat="5.772514385277992" lon="-7.28905457033388">
   <extensions>
     <ogr:transect>28</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.779058767765506" lon="-7.302824472435245">
+<wpt lat="5.772990378359212" lon="-7.284343687799742">
   <extensions>
     <ogr:transect>29</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.779536263469641" lon="-7.298113359754984">
+<wpt lat="5.778505232604885" lon="-7.303490252697455">
   <extensions>
     <ogr:transect>30</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.780013235032009" lon="-7.293402204430843">
+<wpt lat="5.77898280418496" lon="-7.298779167761207">
   <extensions>
     <ogr:transect>31</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.78048968245136" lon="-7.288691006508923">
+<wpt lat="5.779459851623836" lon="-7.294068040174958">
   <extensions>
     <ogr:transect>32</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.786480282181949" lon="-7.303127760098961">
+<wpt lat="5.779936374920257" lon="-7.289356869984809">
   <extensions>
     <ogr:transect>33</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.78695778398338" lon="-7.29841631718142">
+<wpt lat="5.780412374073003" lon="-7.284645657236855">
   <extensions>
     <ogr:transect>34</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.787434761636792" lon="-7.293704831611008">
+<wpt lat="5.785926774161379" lon="-7.303793585632047">
   <extensions>
     <ogr:transect>35</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>
-<wpt lat="5.787911215141033" lon="-7.288993303433831">
+<wpt lat="5.78640435183911" lon="-7.299082170462836">
   <extensions>
     <ogr:transect>36</ogr:transect>
+    <ogr:strata>Duikers</ogr:strata>
+  </extensions>
+</wpt>
+<wpt lat="5.786881405369486" lon="-7.294370712634631">
+  <extensions>
+    <ogr:transect>37</ogr:transect>
+    <ogr:strata>Duikers</ogr:strata>
+  </extensions>
+</wpt>
+<wpt lat="5.787357934751202" lon="-7.289659212193538">
+  <extensions>
+    <ogr:transect>38</ogr:transect>
+    <ogr:strata>Duikers</ogr:strata>
+  </extensions>
+</wpt>
+<wpt lat="5.787833939983067" lon="-7.284947669185669">
+  <extensions>
+    <ogr:transect>39</ogr:transect>
     <ogr:strata>Duikers</ogr:strata>
   </extensions>
 </wpt>

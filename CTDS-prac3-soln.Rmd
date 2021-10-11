@@ -1,7 +1,7 @@
 ---
 title: Camera trap distance sampling workshop
 description: |
-  <p style="color: red; font-size: 20px;">Practical 3 **solution**:<br> survey design and effort allocation</p>
+    <p style="color: red; font-size: 20px;">Practical 3 **solution**:<br> survey design and effort allocation</p>
 author:
   - name: Workshop development group 
     url: http://workshops.distancesampling.org
@@ -19,18 +19,17 @@ csl: apa.csl
 ```{r include=FALSE}
 knitr::opts_chunk$set(eval=TRUE, echo=TRUE, message=FALSE, warnings=FALSE)
 solution <- TRUE
-library(dssd)
 ```
 
 # Analysis of camera trapping data using distance sampling
 
-Using the duiker study described by @howeetal, this practical helps to design a camera trap distance sampling survey in terms of intensity and spatial arrangement.  We start by visualising the study area in C&ocirc;te d'Ivoire.
+Using the duiker study described by @howeetal, this practical helps to design a camera trap distance sampling survey in terms of intensity and spatial arrangement.  We start by visualising the study area in C&ocirc;te d'Ivoire, where the cameras were deployed according to a systematic grid design with a random start and a 1km spacing between sampling locations.
 
 ```{r map, fig.cap="Study area used by @howeetal", echo=FALSE}
 knitr::include_graphics("studyarea-map.png")
 ```
 
-We will treat the study of @howeetal as a preliminary study and use the estimates from that study to help design a subsequent study building upon information from the previous study.
+Maxwell’s duikers were sampled for about 12 weeks using Bushnell camera traps (Model 119576C that gave a horizontal angle of view of 42°) mounted at an orientation of 0° and a height of 0.7–1.0m, and set to high sensitivity. We will treat the study of @howeetal as a preliminary study and use the estimates from that study to help design a subsequent study building upon information from the previous study. Note that ideally your camera traps should have similar characteristics to those used in the previous study, otherwise you will need to account for that during your design process. Similarly, deploying your cameras with a different orientation or a different height will influence the detectability of your target species of Maxwell’s duikers. 
 
 # Effort needed for desired precision
 
@@ -59,13 +58,14 @@ print(rate.per.day) # detections per camera per day ?
 ```
 
 ```{r howmany, eval=solution}
+library(dssd)
 K0 <- 21
 cv.howe <- 0.27
 cv.target <- 0.20
 K.target <- K0 * cv.howe^2 / cv.target^2
 ```
 
-Use this calculation, the number of stations needed to achieve a CV of 0.20.
+Use this calculation, to estimate the number of stations needed to achieve a CV of 0.20.
 
 ```{r answer, eval=solution, echo=FALSE}
 paste("Number of camera stations to achieve CV of 0.20 =", round(K.target))
@@ -82,9 +82,18 @@ stations27 <- round(calculate.effort(21, 40, line.point="point", cv.values = .27
 
 Contrast this estimate of necessary stations for duikers with those of @cappelle_estimating_2021 for a ~90 day camera deployment (Fig. 5a).
 
+Using the `dssd` (distance sampling survey design) package you can create survey designs, as we will in a moment, and also investigate the relationship between precision and spatial sampling intensity (number of locations in our case) using the calculate.effort function. This function takes information on the number of detections and effort (number of camera sampling locations in this case) from a pilot study, along with information on the dispersion parameter (also known as the variance inflation factor). If the target species were completely evenly distributed across the area of interest and detectability did not differ by location, then the dispersion parameter would be approximately one. There is generally a great deal of variability in camera trap data and the degree of overdispersion can be approximated by $n_{pilot} \cdot cv^2_{pilot}$. Maxwell’s duikers sleep or rest for most of each night, so @howeetal recorded 11,180 distances from 6:30:00 to 17:59:59 using a 2 second time step during that interval. In the final analysis after truncation of the data 10,284 remained and we know the number of stations and the precision associated with this study. We can approximate the dispersion parameter value and examine the possible general relationship between the coefficient of variation and the number of sampling locations.
+
+```{r dispersion, eval=solution}
+dispersion <- 10284*(0.27)^2
+calculate.effort(L0=21, n0=10284, q=dispersion, line.point="point")
+```
+
+You should see the target CV of 0.20 highlighted on the resulting graph.
+
 # Spatial arrangement of camera stations
 
-Having computed the necessary amount of sampling effort, the next component of survey design is placement of cameras upon the landscape. @laguardia_assessing_2021 and others advocate a systematic arrangement of sampling stations across a study area.  We will use the `dssd` package to systematically place the desired number of stations throughout the study area.
+Having computed the necessary amount of sampling effort ($K_{target}$) to achieve the CV of 0.20, the next component of survey design is placement of cameras upon the landscape. @laguardia_assessing_2021 and others advocate a systematic arrangement of sampling stations across a study area.  We will use the `dssd` package to systematically place the desired number of stations throughout the study area.
 
 First step is to import a shape file of the study area, which I created using QGIS.  The original shape file used the WGS84 datum.  The shape file needs to be projected flat such that the units of measure are not distorted; I have chosen a simple Albers Equal Area projection (see `proj4string` below).  The projected shape file is a `region` available to the `dssd` package via `make.region`
 
@@ -130,7 +139,6 @@ write.transects(thepoints,
 knitr::include_graphics("gpxfileEarth.png")
 ```
 
-
 # Alternative visualisation
 
 Location of samplers can be overlaid onto various base maps using the `leaflet` package for use in reports.  In HTML form, the resulting figures are interactive, i.e., can be zoomed and panned and measurements can be taken using the tool in the upper right corner.
@@ -160,5 +168,12 @@ m <- addAwesomeMarkers(m, data=new, icon=icons,
                        label = ~as.character(new$label))
 m <- addCircles(m, data=tmp, radius=15,color = 'red', weight = 2)
 m
-
 ```
+
+# Additional considerations
+
+- The $cv_{target}$ used in the practical exercise accounted for the uncertainty associated with encounter rate and detectability. What difference might accounting for the uncertainty associated with temporal availability of Maxwell’s duikers (that are known to rest for shorter periods even during the day) make in the design process? 
+- If you wanted to design a multi-species survey that included species that were considerably rarer that Maxwell’s duikers, then what other options might you consider aside from adding more point locations to your survey design?
+- If the rare species of interest is individually identifiable, then how might you augment your camera trap distance sampling design to obtain a robust and adequately precise estimate of density and abundance?
+- Given that the vast majority of the variance in the density estimate is due to variation in encounter rate between sampling locations, could you use camera trap data from previous surveys in your study area, where distances to animals were not measures, to estimate the effort required for a planned camera trap distance sampling survey?
+
