@@ -17,7 +17,7 @@ csl: apa.csl
 ---
 
 ```{r include=FALSE}
-knitr::opts_chunk$set(eval=TRUE, echo=TRUE, message=FALSE, warnings=FALSE)
+knitr::opts_chunk$set(eval=solution, echo=TRUE, message=FALSE, warnings=FALSE)
 solution <- TRUE
 ```
 
@@ -135,7 +135,7 @@ write.transects(thepoints,
                 proj4string = original.projection)
 ```
 
-```{r googleearth, eval=TRUE, fig.cap="Camera station coordinates as gpx file viewed with Google Earth.", echo=FALSE}
+```{r googleearth, eval=solution, fig.cap="Camera station coordinates as gpx file viewed with Google Earth.", echo=FALSE}
 knitr::include_graphics("gpxfileEarth.png")
 ```
 
