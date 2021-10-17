@@ -17,11 +17,11 @@ csl: apa.csl
 ---
 
 ```{r include=FALSE}
-knitr::opts_chunk$set(eval=solution, echo=TRUE, message=FALSE, warnings=FALSE)
+knitr::opts_chunk$set(eval=TRUE, echo=TRUE, message=FALSE, warnings=FALSE)
 solution <- TRUE
 ```
 
-# Analysis of camera trapping data using distance sampling
+# Survey design
 
 Using the duiker study described by @howeetal, this practical helps to design a camera trap distance sampling survey in terms of intensity and spatial arrangement.  We start by visualising the study area in C&ocirc;te d'Ivoire, where the cameras were deployed according to a systematic grid design with a random start and a 1km spacing between sampling locations.
 
@@ -172,8 +172,8 @@ m
 
 # Additional considerations
 
-- The $cv_{target}$ used in the practical exercise accounted for the uncertainty associated with encounter rate and detectability. What difference might accounting for the uncertainty associated with temporal availability of Maxwell’s duikers (that are known to rest for shorter periods even during the day) make in the design process? 
+- The $cv_{pilot}$ used in the practical exercise accounted for the uncertainty associated with encounter rate and detectability. What difference might accounting for the uncertainty associated with temporal availability of Maxwell’s duikers (that are known to rest for shorter periods even during the day) make in the design process? 
 - If you wanted to design a multi-species survey that included species that were considerably rarer that Maxwell’s duikers, then what other options might you consider aside from adding more point locations to your survey design?
 - If the rare species of interest is individually identifiable, then how might you augment your camera trap distance sampling design to obtain a robust and adequately precise estimate of density and abundance?
-- Given that the vast majority of the variance in the density estimate is due to variation in encounter rate between sampling locations, could you use camera trap data from previous surveys in your study area, where distances to animals were not measures, to estimate the effort required for a planned camera trap distance sampling survey?
+- Given that the vast majority of the variance in the density estimate is due to variation in encounter rate between sampling locations, could you use camera trap data from previous surveys in your study area, where distances to animals were not measured, to estimate the effort required for a planned camera trap distance sampling survey?
 

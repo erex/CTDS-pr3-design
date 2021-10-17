@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,12 +77,34 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
 </style>
 
   <!--radix_placeholder_meta_tags-->
@@ -92,8 +114,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-10-11" />
-  <meta property="article:created" itemprop="dateCreated" content="2021-10-11" />
+  <meta property="article:published" itemprop="datePublished" content="2021-10-17" />
+  <meta property="article:created" itemprop="dateCreated" content="2021-10-17" />
   <meta name="article:author" content="Workshop development group" />
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -116,7 +138,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography","csl"]}},"value":[{"type":"character","attributes":{},"value":["Camera trap distance sampling workshop"]},{"type":"character","attributes":{},"value":["Practical 3: survey design and effort allocation\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Workshop development group"]},{"type":"character","attributes":{},"value":["http://workshops.distancesampling.org"]},{"type":"character","attributes":{},"value":["CREEM, Univ of St Andrews"]},{"type":"character","attributes":{},"value":["https://www.creem.st-andrews.ac.uk"]}]}]},{"type":"character","attributes":{},"value":["2021-10-11"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["howeetal18.bib"]},{"type":"character","attributes":{},"value":["apa.csl"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","bibliography","csl"]}},"value":[{"type":"character","attributes":{},"value":["Camera trap distance sampling workshop"]},{"type":"character","attributes":{},"value":["Practical 3: survey design and effort allocation\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Workshop development group"]},{"type":"character","attributes":{},"value":["http://workshops.distancesampling.org"]},{"type":"character","attributes":{},"value":["CREEM, Univ of St Andrews"]},{"type":"character","attributes":{},"value":["https://www.creem.st-andrews.ac.uk"]}]}]},{"type":"character","attributes":{},"value":["2021-10-17"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["howeetal18.bib"]},{"type":"character","attributes":{},"value":["apa.csl"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1268,7 +1290,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -1460,7 +1485,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Camera trap distance sampling workshop","description":"Practical 3: survey design and effort allocation","authors":[{"author":"Workshop development group","authorURL":"http://workshops.distancesampling.org","affiliation":"CREEM, Univ of St Andrews","affiliationURL":"https://www.creem.st-andrews.ac.uk","orcidID":""}],"publishedDate":"2021-10-11T00:00:00.000+01:00","citationText":"group, 2021"}
+{"title":"Camera trap distance sampling workshop","description":"Practical 3: survey design and effort allocation","authors":[{"author":"Workshop development group","authorURL":"http://workshops.distancesampling.org","affiliation":"CREEM, Univ of St Andrews","affiliationURL":"https://www.creem.st-andrews.ac.uk","orcidID":""}],"publishedDate":"2021-10-17T00:00:00.000+01:00","citationText":"group, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1479,7 +1504,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-byline">
   Workshop development group <a href="http://workshops.distancesampling.org" class="uri">http://workshops.distancesampling.org</a> (CREEM, Univ of St Andrews)<a href="https://www.creem.st-andrews.ac.uk" class="uri">https://www.creem.st-andrews.ac.uk</a>
   
-<br />2021-10-11
+<br />2021-10-17
 </div>
 
 <div class="d-article">
@@ -1487,7 +1512,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#analysis-of-camera-trapping-data-using-distance-sampling">Analysis of camera trapping data using distance sampling</a></li>
+<li><a href="#survey-design">Survey design</a></li>
 <li><a href="#effort-needed-for-desired-precision">Effort needed for desired precision</a></li>
 <li><a href="#spatial-arrangement-of-camera-stations">Spatial arrangement of camera stations</a></li>
 <li><a href="#export-locations-for-use-in-the-field">Export locations for use in the field</a></li>
@@ -1496,7 +1521,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 </nav>
 </div>
-<h1 id="analysis-of-camera-trapping-data-using-distance-sampling">Analysis of camera trapping data using distance sampling</h1>
+<h1 id="survey-design">Survey design</h1>
 <p>Using the duiker study described by <span class="citation" data-cites="howeetal"><a href="#ref-howeetal" role="doc-biblioref">Howe, Buckland, Després-Einspenner, &amp; Kühl</a> (<a href="#ref-howeetal" role="doc-biblioref">2017</a>)</span>, this practical helps to design a camera trap distance sampling survey in terms of intensity and spatial arrangement. We start by visualising the study area in Côte d’Ivoire, where the cameras were deployed according to a systematic grid design with a random start and a 1km spacing between sampling locations.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:map"></span>
@@ -1631,10 +1656,10 @@ Figure 2: Camera station coordinates as gpx file viewed with Google Earth.
 </div>
 <h1 id="additional-considerations">Additional considerations</h1>
 <ul>
-<li>The <span class="math inline">\(cv_{target}\)</span> used in the practical exercise accounted for the uncertainty associated with encounter rate and detectability. What difference might accounting for the uncertainty associated with temporal availability of Maxwell’s duikers (that are known to rest for shorter periods even during the day) make in the design process?</li>
+<li>The <span class="math inline">\(cv_{pilot}\)</span> used in the practical exercise accounted for the uncertainty associated with encounter rate and detectability. What difference might accounting for the uncertainty associated with temporal availability of Maxwell’s duikers (that are known to rest for shorter periods even during the day) make in the design process?</li>
 <li>If you wanted to design a multi-species survey that included species that were considerably rarer that Maxwell’s duikers, then what other options might you consider aside from adding more point locations to your survey design?</li>
 <li>If the rare species of interest is individually identifiable, then how might you augment your camera trap distance sampling design to obtain a robust and adequately precise estimate of density and abundance?</li>
-<li>Given that the vast majority of the variance in the density estimate is due to variation in encounter rate between sampling locations, could you use camera trap data from previous surveys in your study area, where distances to animals were not measures, to estimate the effort required for a planned camera trap distance sampling survey?</li>
+<li>Given that the vast majority of the variance in the density estimate is due to variation in encounter rate between sampling locations, could you use camera trap data from previous surveys in your study area, where distances to animals were not measured, to estimate the effort required for a planned camera trap distance sampling survey?</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
