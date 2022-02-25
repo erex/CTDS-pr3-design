@@ -1,0 +1,86 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Eric Rexstad}
+\title{Derivation of dispersion approximation}
+\begin{document}
+\section{Derivation of dispersion approximation}
+Buckland et al. (2015) describes how to approximate the number of sampling point transects to achieve desired precision given information from a pilot study.
+
+\begin{equation}
+\label{eq:21}
+K=\frac{K_{0}\{\mbox{cv}(\hat{D})\}^{2}}{\left\{\mbox{cv}_{t}(\hat{D})\right\}^{2}}
+\end{equation}
+where
+\begin{itemize}
+	\item $K_0$ number of points in pilot study, 
+	\item $\mbox{cv}(\hat{D})$ coefficient of variation from pilot study and
+	\item $\mbox{cv}_{t}(\hat{D})$ desired (target) coefficient of variation
+\end{itemize}
+
+If the pilot study was too small to produce an estimate of $\hat{D}$ so there is no coefficient of variation from the pilot study, an alternative formulation could be employed:
+\begin{equation}
+\label{eq:22}
+K=\frac{K_{0}}{n_{0}} \frac{b}{\left\{\mathrm{cv}_{t}(\hat{D})\right\}^{2}}
+\end{equation}
+where
+\begin{itemize}
+	\item $n_0$ number of detections in pilot study.
+\end{itemize}
+
+The two expressions can be equated and solved for $b$
+
+\begin{eqnarray}
+\label{eq:last}
+\frac{K_{0}\{\mbox{cv}(\hat{D})\}^2}{\left\{\mbox{cv}_t(\hat{D})\right\}^2} &=& \frac{K_{0}}{n_0} \frac{b}{\left\{\mathrm{cv}_t(\hat{D})\right\}^2} \\ \nonumber
+b &=& {n_0} \cdot \frac{\mbox{cv}(\hat{D})^2}{\left\{\mbox{cv}_t(\hat{D})\right\}^2}\cdot \mbox{cv}_t(\hat{D})^2  \\ 
+&=& {n_0} \cdot \mbox{cv}(\hat{D})^2 \nonumber
+\end{eqnarray}
+
+Applying this formula to the daytime duiker data produces a $\hat{b}$ of $10284 \cdot 0.27^2 = 750$.
+
+\section{Alternative formulation}
+
+Buckland et al. (2001) presents an alternative formulation to approximate $b$ Eqn. 7.2:
+
+\begin{equation}
+\label{eq:71}
+b \doteq\left\{\frac{\mathrm{var}(n)}{n}+\frac{n \cdot \mathrm{var}\{\hat{f}(0)\}}{\{f(0)\}^{2}}\right\}
+\end{equation}
+
+Applying this formula to Howe et al. (2017) duiker data, in which $\mathrm{var}(n)$ is computed as the variance in detections across camera locations.  Fig. 1 of Howe et al. (2017) shows 23 locations, but Fig. 3 of the same paper shows 21 camera locations.  The data from the file \texttt{DaytimeDistances.txt} holds data from 21 locations and seems consistent with Fig. 3, with stations B1 and E4 having fewer than 5 detections.
+
+Components of Eqn. \ref{eq:71} from the duiker data are
+\begin{itemize}
+	\item $\mathrm{var}(n)$ = 411911
+	\item $n$ = 10284
+	\item $\frac{\mathrm{var{\hat{f}(0)}}}{{\hat{f}(0)}^2} = \mathrm{cv}(\hat{f}(0))^2 = 0.0394^2 = 0.00155236$ (for UNI:cos3 model)
+\end{itemize}
+
+This produces an estimate of the dispersion parameter of 56.  Allowing for possible miscalculation of the number of stations and not accounting for loss of detections arising from truncation during analysis would not account for the discrepancy between $\hat{b}$ computed using Eqn. \ref{eq:71} (56) and the estimate (750) produced using Eqn. \ref{eq:last}.
+
+The Burnham et al. (1980) monograph discusses the derivation of $\hat{b}$
+
+\begin{quotation}
+The 2 equations needed are
+$$
+\mathrm{E}(\mathrm{n})=2 \mathrm{LD} / \mathrm{f}(0)
+$$
+and
+$$
+(\mathrm{cv}(\hat{\mathrm{D}}))^{2}=\frac{\mathrm{var}(\mathrm{n})}{(\mathrm{E}(\mathrm{n}))^{2}}+\frac{\mathrm{var}(\hat{\mathrm{f}}(0))}{(\mathrm{f}(0))^{2}}
+$$
+where cv $(\hat{D})$ is the coefficient of variation of $\hat{\mathrm{D}}$ and $\mathrm{var}(\cdot)$ denotes a sampling variance. To a first approximation, $\mathrm{var}(\mathrm{n})=$ $\mathrm{a}_{1} \mathrm{n}$ and $\mathrm{var}(\hat{\mathrm{f}}(0))=(\mathrm{f}(0))^{2} \mathrm{a}_{2} / \mathrm{n}$ can be written. Those relations are justified in many models and have been confirmed by experience. The constants $a_{1}$ and $a_{2}$ are unknown parameters, and it is important to note that in a given study they are independent (or almost so) of $\mathrm{n}, \mathrm{L}$ and $\mathrm{f}(0)$. Thus, replacing $\mathrm{E}(\mathrm{n})$ by just $\mathrm{n}$,
+$$
+(cv(\hat{D}))^{2}=\frac{1}{n}\left[a_{1}+a_{2}\right]=\frac{b}{n},
+$$
+\end{quotation}
+I let the issue rest with their justification that
+$$
+b = a_1 + a_2 
+$$
+and this relationship has been "confirmed by experience."
+
+
+\end{document}
